@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+// import Prototype1 from "../src/JavaScript Practice/Prototype-Inheritance";
+//import Practice from "../src/JavaScript Practice/JavaScript";
+//import Practice2 from "../src/JavaScript Practice/w3Schools";
+//import PracticeArrays from "../src/JavaScript Practice/JavaScript Arrays";
 
+import App from "./blog/components/App";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reducers from "./blog/reducers";
+
+import thunk from "redux-thunk";
+
+const store = createStore(reducers, applyMiddleware(thunk));
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+  document.querySelector("#root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// ReactDOM.render(<Prototype1 />, document.querySelector("#root"));
