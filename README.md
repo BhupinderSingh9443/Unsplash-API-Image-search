@@ -1,6 +1,6 @@
 Introduction
 
-This is a React JS single page web page that demonstrates the working of "Redux-Thunk".
+This is a React JS single page web page that demonstrates the working of "Redux-Thunk-Asynchronous Calls".
 
 Technologies
 
